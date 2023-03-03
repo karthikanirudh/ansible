@@ -35,7 +35,6 @@
         dest: /opt/tomcat
         owner: tomcat
         group: tomcat
-        recurive: true
         state: directory
       
 
