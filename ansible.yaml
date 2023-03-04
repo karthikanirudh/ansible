@@ -59,7 +59,7 @@
         group: tomcat
     - name: copy the manager app context file
       ansible.builtin.copy:
-        src: hostsmanager
+        src: hostmanager
         dest: /opt/tomcat/latest/webapps/manager/META-INF/context.xml
         owner: tomcat
         group: tomcat
