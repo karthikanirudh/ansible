@@ -28,16 +28,27 @@
     - name: Create a symbolic link
       ansible.builtin.file:
         src: /opt/tomcat/apache-tomcat-10.1.6
-        dest: /opt/tomcat
+        dest: /opt/tomcat/latest
         state: link
     - name: Giving recurive permission
       ansible.builtin.file:
         dest: /opt/tomcat
         owner: tomcat
         group: tomcat
-        recurive: true
         state: directory
+    - name: add execute permissions to shell files
+      ansible.builtin.command: sudo sh -c 'chmod +x /opt/tomcat/latest/bin/*.sh'
+    - name: copy file from local system
+      ansible.builtin.copy:
+        src: tomcat.service
+        dest: /etc/systemd/system/tomcat.service
+        owner: tomcat
+        group: tomcat
       
+
+    
+        
+    
 
     
         
