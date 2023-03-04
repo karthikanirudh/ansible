@@ -46,6 +46,7 @@
         group: tomcat
     - name: systemctl reload
       ansible.builtin.systemd :
+        name: tomcat.service
         daemon_reload: true
         enabled: yes
         state: started
