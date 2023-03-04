@@ -33,6 +33,7 @@
     - name: Giving recurive permission
       ansible.builtin.file:
         dest: /opt/tomcat
+        recurse: true
         owner: tomcat
         group: tomcat
         state: directory
