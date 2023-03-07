@@ -2,7 +2,7 @@
 172.31.36.242 java_package_name: openjdk-11-jdk
 
 [appserver:vars]
- user_name: tomcat
+user_name: tomcat
 group_name: tomcat
 user_home: /opt/tomcat
 user_shell: /bin/false

@@ -3,10 +3,10 @@
   hosts: all
   become: yes
   tasks:
-    -  name: Install tomcat
-       ansible.builtin.package:
-         name: "{{java_package_name}}"
-         state: present
+    - name: Install tomcat
+      ansible.builtin.package:
+        name: "{{java_package_name}}"
+        state: present
     - name: create a tomcat group
       ansible.builtin.group:
         name: "{{ group_name }}"
