@@ -3,6 +3,9 @@
   hosts: all
   become: yes
   tasks:
+    - name: update packages for ubuntu
+      ansible.builtin.apt:
+        update_cache: yes
     - name: Install tomcat
       ansible.builtin.package:
         name: "{{java_package_name}}"
