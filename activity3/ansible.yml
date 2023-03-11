@@ -1,5 +1,6 @@
 ---
 - name: install apache server
+  hosts: all
   become: yes
   tasks:
     - name: install apache on ubuntu
