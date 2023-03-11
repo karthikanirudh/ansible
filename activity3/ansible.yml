@@ -8,6 +8,9 @@
         name: apache2
         update_cache: yes
         state: present
+      when: ansible_facts['distribution'] == "Ubuntu"
+      notify:
+        - enable and restart apache2
     - name: installing php softwares
       ansible.builtin.apt:
         name: 
@@ -15,8 +18,17 @@
           - libapache2-mod-php
           - php-mysql
         state: present
+      when: ansible_facts['distribution'] == "Ubuntu"
+      notify:
+        - enable and restart apache2
     - name: creating a file
       ansible.builtin.copy:
         src: info.php
         dest: /var/www/html/info.php
+  handlers:
+    - name: enable and restart apache2
+      ansible.builtin.systemd:
+        name: apache2
+        enabled: yes
+        state: restarted
     
