@@ -1,0 +1,21 @@
+---
+- name: install apache server
+  become: yes
+  task:
+    - name: install apache on ubuntu
+      ansible.builtin.apt:
+        name: apache2
+        update_cache: yes
+        state: present
+    - name: installing php softwares
+      ansible.builtin.apt:
+        name: 
+          - php
+          - libapache2-mod-php
+          - php-mysql
+        state: present
+    - name: creating a file
+      ansible.builtin.file:
+        src: info.php
+        dest: /var/www/html/info.php
+    
