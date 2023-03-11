@@ -16,7 +16,7 @@
           - php-mysql
         state: present
     - name: creating a file
-      ansible.builtin.file:
+      ansible.builtin.copy:
         src: info.php
         dest: /var/www/html/info.php
     
