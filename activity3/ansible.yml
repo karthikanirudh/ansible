@@ -1,7 +1,7 @@
 ---
 - name: install apache server
   become: yes
-  task:
+  tasks:
     - name: install apache on ubuntu
       ansible.builtin.apt:
         name: apache2
