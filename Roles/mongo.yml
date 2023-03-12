@@ -1,6 +1,6 @@
 ---
-- name: installing mongodb roles 
+- name: installing mysql role
   hosts: all
   roles: 
-    - role: iquzart.mongodb
+    - role: geerlingguy.mysql
       become: yes
