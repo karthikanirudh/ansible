@@ -2,5 +2,5 @@
 - name: installing mongodb roles 
   hosts: all
   roles: 
-    - role: undergreen.mongodb
+    - role: iquzart.mongodb
       become: yes
