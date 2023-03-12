@@ -1,6 +1,6 @@
 ---
 - name: installing mongodb roles 
-  tasks: all
+  hosts: all
   roles: 
     - role: undergreen.mongodb
       become: yes
