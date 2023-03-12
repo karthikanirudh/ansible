@@ -1,6 +1,6 @@
 ---
-- name: installing mysql role
+- name: installing docker in role
   hosts: all
   roles: 
-    - role: geerlingguy.mysql
+    - role: mullholland.docker
       become: yes
